@@ -1,9 +1,12 @@
 package Cliente;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
+
 public class ClienteMenu {
-    public static void main(String[] args) {
+    public static void clienteMenu() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
         do {
@@ -18,7 +21,7 @@ public class ClienteMenu {
             switch (opcao) {
                 case 1:
                     System.out.println("Os jogos disponiveis são: \n");
-                    // função para imprimir arquivo
+                    //imprimirAquivo("");
                     break;
                 case 2:
                     System.out.println("O jogo mais recente: \n");

@@ -1,9 +1,12 @@
 package Admin;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
+
 public class AdminMenu {
-    public static void main(String[] args) {
+    public static void adminMenu() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
         do {
@@ -45,7 +48,8 @@ public class AdminMenu {
                     break;
                 case 7:
                     System.out.println("Saindo...");
-                    return;
+                    imprimirAquivo("Ficheiros/GameStart_Copyright.txt");
+                    scanner.close();
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
