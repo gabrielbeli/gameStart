@@ -11,13 +11,13 @@ public class AdminMenu {
 
         do {
             System.out.println("Menu Admin:");
-            System.out.println("1. Consultar Ficheiros");
-            System.out.println("2. Total de Vendas");
-            System.out.println("3. Total de Lucro");
-            System.out.println("4. Melhor Cliente");
-            System.out.println("5. Melhor Categoria");
-            System.out.println("6. Jogo Mais Caro");
-            System.out.println("7. Sair");
+            System.out.println("1.Consultar Ficheiros");
+            System.out.println("2.Total de Vendas");
+            System.out.println("3.Total de Lucro");
+            System.out.println("4.Melhor Cliente");
+            System.out.println("5.Melhor Categoria");
+            System.out.println("6.Jogo Mais Caro");
+            System.out.println("7.Voltar");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
 

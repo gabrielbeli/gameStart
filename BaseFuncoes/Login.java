@@ -36,7 +36,6 @@ public class Login {
                     break;
                 case 2:
                     if (autenticadoCliente(input)){
-                        System.out.println("                             \uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E");
                         clienteMenu();
                     }
                     break;
@@ -93,20 +92,22 @@ public class Login {
 
         System.out.println("                         \uD83E\uDEAA Faça seu cadastro \uD83E\uDEAA \n");
 
-        System.out.print("Usuário: ");
+        System.out.print("     \uD83D\uDC64Usuário: ");
+        input.nextLine();
         String username = input.next();
-
-        System.out.print("Senha numerica de 6 digitos: ");
+        input.nextLine();
+        System.out.print("     \uD83D\uDD12Senha numerica de 6 digitos: ");
         int password = input.nextInt();
 
-        System.out.print("E-mail: ");
+        System.out.print("     \uD83D\uDCE7E-mail: ");
         String email = input.next();
 
-        System.out.print("Telemóvel: ");
+        System.out.print("     ☎\uFE0FTelemóvel: ");
         int phone = input.nextInt();
 
         System.out.println();
-        System.out.println("Cliente: " + username + " | " + phone + " | " + email + " | inserido com sucesso!\n");
+        System.out.println("                      Cadastro criado com sucesso! \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB \n ");
+        System.out.println("                    "+username + " | " + phone + " | " + email + "\n");
 
         return true;
     }

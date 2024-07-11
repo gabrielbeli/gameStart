@@ -1,8 +1,49 @@
 package Cliente;
 
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Catalago {
 
-    //aqui vou usar um switch para o usuario escolher o tipo de catalago que quer ver
+
+    public static void catalago() throws FileNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("\n    \uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E \n");
+            System.out.println("                         \uD83E\uDE99 INSERT YOUR COIN \uD83E\uDE99");
+            System.out.println("                          1.Todos os Jogos");
+            System.out.println("                          2.Jogos por categoria");
+            System.out.println("                          3.Jogos por editora");
+            System.out.println("                          4.Catalago gráfico");
+            System.out.println("                          5.Voltar\n");
+            System.out.print("     \uD83D\uDD79\uFE0FOpção:");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("");
+                    //imprimirAquivo("");
+                    break;
+                case 2:
+                    System.out.println("");
+                    //função para imprimir arquivo
+                    break;
+                case 3:
+                    System.out.println("");
+                    //função para impimir as vagas disponiveis de estacionamento
+                    break;
+                case 4:
+                    System.out.println("");
+                    //função para imprimir arquivo
+                    break;
+                case 5:
+                    return;
+                default:
+                    System.out.println("");
+            }
+        } while (true);
+    }
 
     // 3. Imprimir Catálogo: Imprima todos os títulos de jogos (sem duplicados).
 
