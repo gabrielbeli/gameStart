@@ -107,7 +107,7 @@ public class Login {
 
         System.out.println();
         System.out.println("                      Cadastro criado com sucesso! \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB \n ");
-        System.out.println("                    "+username + " | " + phone + " | " + email + "\n");
+        System.out.println("                    "+ username + " | " + phone + " | " + email + "\n");
 
         return true;
     }
