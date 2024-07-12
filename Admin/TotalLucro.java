@@ -12,16 +12,13 @@ public class TotalLucro {
 
         double totalLucro = 0.0;
 
-        for (int X = 0; X < matrizVendas.length; X++) {
-
-            if (X == 0) continue;
+        for (int X = 1; X < matrizVendas.length; X++) {
 
             double valorVenda = Double.parseDouble(matrizVendas[X][5]);
-
             String categoriaJogo = matrizVendas[X][3];
-
             double porcentagemMargem = 0.0;
-            for (int Y = 0; Y < matrizPorcentagens.length; Y++) {
+
+            for (int Y = 1; Y < matrizPorcentagens.length; Y++) {
                 if (matrizPorcentagens[Y][0].equalsIgnoreCase(categoriaJogo)) {
                     porcentagemMargem = Double.parseDouble(matrizPorcentagens[Y][1]);
                     break;
@@ -29,14 +26,19 @@ public class TotalLucro {
             }
 
             double custoProduto = valorVenda / (1 + (porcentagemMargem / 100.0));
-
             double lucroJogo = valorVenda - custoProduto;
 
             totalLucro += lucroJogo;
+
+            // Debugging prints
+            System.out.println("Valor Venda: " + valorVenda);
+            System.out.println("Categoria Jogo: " + categoriaJogo);
+            System.out.println("Porcentagem Margem: " + porcentagemMargem);
+            System.out.println("Custo Produto: " + custoProduto);
+            System.out.println("Lucro Jogo: " + lucroJogo);
         }
 
-        // Imprime o total geral de lucro das vendas
         System.out.println("\nTotal Geral de Lucro das Vendas\n");
-        System.out.println("Total: " + totalLucro + " €");
+        System.out.printf(""+totalLucro);
     }
 }
