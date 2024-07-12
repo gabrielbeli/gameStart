@@ -1,39 +1,44 @@
 package Admin;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.GerarMatriz.gerarMatriz;
+
 public class PesquisaCliente {
 
-    //4. Pesquisa de Cliente: Dado um idCliente, imprima todas as informações associadas a esse cliente
-    // (nome, contacto, email), de forma estruturada (“bonita”).
+    public static void pesquisaCliente(String caminho, int idCliente) throws FileNotFoundException {
+        String[][] matriz = gerarMatriz(caminho);
 
-    public static void pesquisaCliente(String caminho) throws FileNotFoundException {
+        boolean encontrouCliente = false;
 
-        Scanner fileScanner = new Scanner(new File(caminho));
-        Scanner scannerCol = new Scanner(new File(caminho));
+        for (int X = 1; X < matriz.length; X++) {
+            int id = Integer.parseInt(matriz[X][0]);
+            String nome = matriz[X][1];
+            String telemovel = matriz[X][2];
+            String email = matriz[X][3];
 
-        int contadorLinhas=0, contadorCol=0;
-
-        while (fileScanner.hasNextLine()){
-            contadorLinhas++;
-            fileScanner.nextLine();
-        }
-
-        while(scannerCol.hasNext()){
-            contadorCol++;
-            scannerCol.next();
-        }
-
-        String[][] matriz = new String[contadorLinhas][contadorCol];
-
-        for (int X = 0; X < matriz.length; X++) {
-            for (int Y = 0; Y <  matriz[0].length; Y++) {
-                System.out.print(matriz[X][Y] + " ");
+            if (id == idCliente) {
+                System.out.println("\nNome: " + nome);
+                System.out.println("Telemóvel: " + telemovel);
+                System.out.println("Email: " + email + "\n");
+                encontrouCliente = true;
+                break;
             }
-            System.out.println();
         }
 
+        if (!encontrouCliente) {
+            System.out.println("Cliente não encontrado.");
+        }
+    }
+
+    public static int obterIdCliente() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("\nDigite o ID do cliente: ");
+        int idCliente = scanner.nextInt();
+        scanner.nextLine();
+
+        return idCliente;
     }
 }

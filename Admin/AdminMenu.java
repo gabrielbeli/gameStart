@@ -3,10 +3,14 @@ package Admin;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Admin.JogoMaisCaro.jogoMaisCaro;
+import static Admin.PesquisaCliente.obterIdCliente;
+import static Admin.PesquisaCliente.pesquisaCliente;
+import static Admin.PesquisaVendas.obterNomeJogo;
+import static Admin.PesquisaVendas.pesquisarJogo;
 import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 import static Admin.TotalVendas.totalVendas;
 import static Admin.Relatorio.relatorio;
-import static Admin.PesquisaCliente.pesquisaCliente;
 
 public class AdminMenu {
     public static void adminMenu() throws FileNotFoundException {
@@ -21,7 +25,10 @@ public class AdminMenu {
             System.out.println("5.Melhor Cliente");
             System.out.println("6.Melhor Categoria");
             System.out.println("7.Jogo Mais Caro");
-            System.out.println("8.Voltar");
+            System.out.println("8.filtrar venda por jogo");
+            System.out.println("9.Top 5 vendas");
+            System.out.println("10.Bottom 5 vendas");
+            System.out.println("11.Voltar");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
 
@@ -31,11 +38,10 @@ public class AdminMenu {
                     relatorio();
                     break;
                 case 2:
-                    // função para ler arquivos
-                    pesquisaCliente("Ficheiros/GameStart_Clientes.csv");
+                    // função para encontrar cliente
+                    pesquisaCliente("Ficheiros/GameStart_Clientes.csv",obterIdCliente());
                     break;
                 case 3:
-                    System.out.println("Total em vendas: \n");
                     // função para total de vendas
                     imprimirAquivo("Ficheiros/GameStart_Vendas.csv");
                     totalVendas("Ficheiros/GameStart_Vendas.csv");
@@ -55,8 +61,17 @@ public class AdminMenu {
                 case 7:
                     System.out.println("O jogo mais caro em estoque: \n");
                     // função para consultar jogo mais caro
+                    jogoMaisCaro("Ficheiros/GameStart_Vendas.csv","Ficheiros/GameStart_Clientes.csv");
                     break;
                 case 8:
+                    // função para filtrar vendas por jogo
+                    pesquisarJogo("Ficheiros/GameStart_Vendas.csv", obterNomeJogo());
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

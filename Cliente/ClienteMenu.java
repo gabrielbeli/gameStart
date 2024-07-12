@@ -3,6 +3,7 @@ package Cliente;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Cliente.JogoMaisRecente.jogoMaisRecente;
 import static Cliente.ProcurarEstacionamento.estacionamento;
 import  static Cliente.Catalago.catalago;
 
@@ -17,7 +18,7 @@ public class ClienteMenu {
             System.out.println("                          2.Jogo mais recente");
             System.out.println("                          3.Vagas estacionamento");
             System.out.println("                          4.Voltar\n");
-            System.out.print("     \uD83D\uDD79\uFE0FOpção:");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção:");
             int opcao = scanner.nextInt();
 
             switch (opcao) {
@@ -26,8 +27,8 @@ public class ClienteMenu {
                     catalago();
                     break;
                 case 2:
-                    System.out.println("O jogo mais recente: \n");
-                    //função para imprimir arquivo
+                    //função para imprimir arquivo;
+                    jogoMaisRecente("Ficheiros/GameStart_Vendas.csv");
                     break;
                 case 3:
                     System.out.println("\n      As vagas disponiveis no estacionamento nesse momento: \n");

@@ -21,7 +21,7 @@ public class Login {
             System.out.println("                                1.Admin");
             System.out.println("                                2.Cliente");
             System.out.println("                                3.Sair\n");
-            System.out.print("     \uD83D\uDD79\uFE0FOpção: ");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção: ");
 
             int menu = input.nextInt();
             System.out.println();
@@ -68,12 +68,12 @@ public class Login {
     private static boolean autenticado(String username, String password) throws FileNotFoundException {
         boolean autenticado = false;
 
-        Scanner reader = new Scanner(new File("Ficheiros/GameStart_Admins.csv"));
-        String line;
+        Scanner scanner = new Scanner(new File("Ficheiros/GameStart_Admins.csv"));
+        String linha;
 
-        while (reader.hasNext() && (line = reader.nextLine()) != null) {
+        while (scanner.hasNext() && (linha = scanner.nextLine()) != null) {
 
-            String[] parts = line.split(";");
+            String[] parts = linha.split(";");
             String fileUsername = parts[0];
             String filePassword = parts[1];
 

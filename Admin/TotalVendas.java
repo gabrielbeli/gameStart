@@ -8,7 +8,6 @@ import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 
 public class TotalVendas {
 
-    // 2. Total de Vendas: Imprima quantas vendas foram executadas e o seu valor total.
     public static void totalVendas(String caminho) throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File(caminho));
