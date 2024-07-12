@@ -25,17 +25,10 @@ public class TotalLucro {
                 }
             }
 
-            double custoProduto = valorVenda / (1 + (porcentagemMargem / 100.0));
-            double lucroJogo = valorVenda - custoProduto;
+            double custoProduto = valorVenda * (1 * (porcentagemMargem) / 100);
 
-            totalLucro += lucroJogo;
+            totalLucro += custoProduto;
 
-            // Debugging prints
-            System.out.println("Valor Venda: " + valorVenda);
-            System.out.println("Categoria Jogo: " + categoriaJogo);
-            System.out.println("Porcentagem Margem: " + porcentagemMargem);
-            System.out.println("Custo Produto: " + custoProduto);
-            System.out.println("Lucro Jogo: " + lucroJogo);
         }
 
         System.out.println("\nTotal Geral de Lucro das Vendas\n");

@@ -12,32 +12,39 @@ public class MelhorCategoria {
         String[][] matrizPorcentagens = gerarMatriz(caminhoPorcentagens);
 
         String categoriaMaisLucrativa = "";
-        double lucroMaisLucrativo = 0.0;
+        double lucroMais = 0.0;
+        boolean encontrouCategoria = false;
 
-        for (int X = 1; X < matrizVendas.length; X++) {
-
+        for(int X = 0; X < matrizVendas.length; X++) {
             String categoriaJogo = matrizVendas[X][3];
-            double valorVenda = Double.parseDouble(matrizVendas[X][5]);
+            System.out.println(categoriaJogo);
+        }
 
+        for (int X = 0; X < matrizVendas.length; X++) {
+
+            double valorVenda = Double.parseDouble(matrizVendas[X][5]);
+            String categoriaJogo = matrizVendas[X][3];
             double porcentagemMargem = 0.0;
-            for (int Y = 1; Y < matrizPorcentagens.length; Y++) {
-                if (matrizPorcentagens[Y][0].equalsIgnoreCase(matrizVendas[X][3])) {
+
+            for (int Y = 0; Y < matrizPorcentagens.length; Y++) {
+                if (matrizPorcentagens[Y][0].equalsIgnoreCase(categoriaJogo)) {
                     porcentagemMargem = Double.parseDouble(matrizPorcentagens[Y][1]);
-                    break;
+
                 }
             }
 
-            double custoJogo = valorVenda / (1+ (porcentagemMargem / 100.0));
-            double lucroJogo = valorVenda - custoJogo;
+            double custoJogo = valorVenda * ((porcentagemMargem / 100.0));
+            double lucroJogo = custoJogo;
 
-            if (lucroJogo > lucroMaisLucrativo) {
-                lucroMaisLucrativo = lucroJogo;
+            if (lucroJogo > lucroMais) {
+                lucroMais += lucroJogo;
                 categoriaMaisLucrativa = categoriaJogo;
             }
         }
 
         System.out.println("\nCategoria Mais Lucrativa\n");
         System.out.println(categoriaMaisLucrativa);
-        System.out.println("Lucro Gerado: " + lucroMaisLucrativo + " € ");
+        System.out.println("Lucro Gerado: " + lucroMais + " € ");
     }
 }
+
