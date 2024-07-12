@@ -11,34 +11,41 @@ public class MelhorCategoria {
         String[][] matrizVendas = gerarMatriz(caminhoVendas);
         String[][] matrizPorcentagens = gerarMatriz(caminhoPorcentagens);
 
-        String categoriaMaisLucrativa = "";
-        double lucroMais = 0.0;
-        boolean encontrouCategoria = false;
 
-        for(int X = 0; X < matrizVendas.length; X++) {
-            String categoriaJogo = matrizVendas[X][3];
-            System.out.println(categoriaJogo);
+        String[] categorias = new String[matrizPorcentagens.length];
+        double[] lucros = new double[matrizPorcentagens.length];
+
+
+        for (int X = 0; X < matrizPorcentagens.length; X++) {
+            categorias[X] = matrizPorcentagens[X][0];
+            lucros[X] = 0.0;
         }
 
         for (int X = 0; X < matrizVendas.length; X++) {
-
-            double valorVenda = Double.parseDouble(matrizVendas[X][5]);
             String categoriaJogo = matrizVendas[X][3];
-            double porcentagemMargem = 0.0;
+            double valorVenda = Double.parseDouble(matrizVendas[X][5]);
 
+            double porcentagemMargem = 0.0;
             for (int Y = 0; Y < matrizPorcentagens.length; Y++) {
                 if (matrizPorcentagens[Y][0].equalsIgnoreCase(categoriaJogo)) {
                     porcentagemMargem = Double.parseDouble(matrizPorcentagens[Y][1]);
-
                 }
             }
 
-            double custoJogo = valorVenda * ((porcentagemMargem / 100.0));
-            double lucroJogo = custoJogo;
+            double lucroJogo = valorVenda * (porcentagemMargem / 100.0);
 
-            if (lucroJogo > lucroMais) {
-                lucroMais += lucroJogo;
-                categoriaMaisLucrativa = categoriaJogo;
+            for (int k = 0; k < categorias.length; k++)
+                if (categorias[k].equalsIgnoreCase(categoriaJogo)) {
+                    lucros[k] += lucroJogo;
+                }
+        }
+
+        String categoriaMaisLucrativa = null;
+        double lucroMais = 0.0;
+        for (int X = 0; X < lucros.length; X++) {
+            if (lucros[X] > lucroMais) {
+                lucroMais = lucros[X];
+                categoriaMaisLucrativa = categorias[X];
             }
         }
 
@@ -47,4 +54,7 @@ public class MelhorCategoria {
         System.out.println("Lucro Gerado: " + lucroMais + " € ");
     }
 }
+
+
+
 
