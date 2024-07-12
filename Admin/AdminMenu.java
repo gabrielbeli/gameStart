@@ -3,11 +3,16 @@ package Admin;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Admin.Bottom5Jogos.topJogosMenosLucro;
 import static Admin.JogoMaisCaro.jogoMaisCaro;
+import static Admin.MelhorCategoria.categoriaMaisLucrativa;
+import static Admin.MelhoresClientes.melhorCliente;
 import static Admin.PesquisaCliente.obterIdCliente;
 import static Admin.PesquisaCliente.pesquisaCliente;
 import static Admin.PesquisaVendas.obterNomeJogo;
 import static Admin.PesquisaVendas.pesquisarJogo;
+import static Admin.Top5Jogos.topJogosLucro;
+import static Admin.TotalLucro.totalGeralLucro;
 import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 import static Admin.TotalVendas.totalVendas;
 import static Admin.Relatorio.relatorio;
@@ -47,16 +52,16 @@ public class AdminMenu {
                     totalVendas("Ficheiros/GameStart_Vendas.csv");
                     break;
                 case 4:
-                    System.out.println("Lucro total de: \n");
                     // função para total de lucro
+                    totalGeralLucro("Ficheiros/GameStart_Vendas.csv", "Ficheiros/GameStart_Categorias.csv");
                     break;
                 case 5:
-                    System.out.println("O(s) melhor(es) cliente(s): \n");
                     // função para melhor(es) cliente(s)
+                    melhorCliente("Ficheiros/GameStart_Clientes.csv", "Ficheiros/GameStart_Vendas.csv");
                     break;
                 case 6:
-                    System.out.println("A melhor categoria baseada em vendas: \n");
                     // função para melhor categoria
+                    categoriaMaisLucrativa("Ficheiros/GameStart_Vendas.csv", "Ficheiros/GameStart_Categorias.csv");
                     break;
                 case 7:
                     System.out.println("O jogo mais caro em estoque: \n");
@@ -68,8 +73,12 @@ public class AdminMenu {
                     pesquisarJogo("Ficheiros/GameStart_Vendas.csv", obterNomeJogo());
                     break;
                 case 9:
+                    //função para filtrar os 5 jogos que mais lucraram
+                    topJogosLucro("Ficheiros/GameStart_Vendas.csv","Ficheiros/GameStart_Categorias.csv", 5);
                     break;
                 case 10:
+                    //função para filtrar os 5 jogos menos lucrativos
+                    topJogosMenosLucro("Ficheiros/GameStart_Vendas.csv","Ficheiros/GameStart_Categorias.csv", 5);
                     break;
                 case 11:
                     return;
