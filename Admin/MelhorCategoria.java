@@ -6,43 +6,61 @@ import static BaseFuncoes.GerarMatriz.gerarMatriz;
 
 public class MelhorCategoria {
 
-    public static void categoriaMaisLucrativa(String caminhoVendas, String caminhoPorcentagens) throws FileNotFoundException {
+    /**
+     * Método: Encontra a categoria que mais vendeu e apresenta seu lucro total
+     * @return imprime em tela o melhor cliente e suas informações
+     * @param caminhoVendas arquivo das vendas
+     * @param caminhoPercentagens arquivo com a referencia de percentagens
+     * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
+     */
+    public static void categoriaMaisLucrativa(String caminhoVendas, String caminhoPercentagens) throws FileNotFoundException {
 
         String[][] matrizVendas = gerarMatriz(caminhoVendas);
-        String[][] matrizPorcentagens = gerarMatriz(caminhoPorcentagens);
-
+        String[][] matrizPorcentagens = gerarMatriz(caminhoPercentagens);
 
         String[] categorias = new String[matrizPorcentagens.length];
         double[] lucros = new double[matrizPorcentagens.length];
 
-
+        // Começo percebendo das categorias dentro da matriz de percentagem
         for (int X = 0; X < matrizPorcentagens.length; X++) {
             categorias[X] = matrizPorcentagens[X][0];
-            lucros[X] = 0.0;
         }
 
-        for (int X = 0; X < matrizVendas.length; X++) {
-            String categoriaJogo = matrizVendas[X][3];
-            double valorVenda = Double.parseDouble(matrizVendas[X][5]);
+        // Percorro cada categoria
+        for (int CT = 0; CT < categorias.length; CT++) {
 
-            double porcentagemMargem = 0.0;
-            for (int Y = 0; Y < matrizPorcentagens.length; Y++) {
-                if (matrizPorcentagens[Y][0].equalsIgnoreCase(categoriaJogo)) {
-                    porcentagemMargem = Double.parseDouble(matrizPorcentagens[Y][1]);
+            String categoriaAtual = categorias[CT];
+
+            // Percorro a matriz de vendas para calcular
+            for (int VD = 1; VD < matrizVendas.length; VD++) {
+
+                String categoriaJogo = matrizVendas[VD][3];
+                double valorVenda = Double.parseDouble(matrizVendas[VD][5]);
+
+                // Verificar se a venda pertence à categoria atual
+                if (categoriaJogo.equalsIgnoreCase(categoriaAtual)) {
+                    double porcentagemMargem = 0.0;
+
+                    // Aqui eu defino a porcentagem
+                    for (int PG = 0; PG < matrizPorcentagens.length; PG++) {
+
+                        if (matrizPorcentagens[PG][0].equalsIgnoreCase(categoriaJogo)) {
+                            porcentagemMargem = Double.parseDouble(matrizPorcentagens[PG][1]);
+                        }
+                    }
+
+                    // Faço a conta e acrescento ao valor atual
+                    double lucroJogo = valorVenda * (porcentagemMargem / 100.0);
+                    lucros[CT] += lucroJogo;
                 }
             }
-
-            double lucroJogo = valorVenda * (porcentagemMargem / 100.0);
-
-            for (int k = 0; k < categorias.length; k++)
-                if (categorias[k].equalsIgnoreCase(categoriaJogo)) {
-                    lucros[k] += lucroJogo;
-                }
         }
 
         String categoriaMaisLucrativa = null;
         double lucroMais = 0.0;
-        for (int X = 0; X < lucros.length; X++) {
+
+        // Aqui encontro a categoria de maior lucro geral
+        for (int X = 0; X < categorias.length; X++) {
             if (lucros[X] > lucroMais) {
                 lucroMais = lucros[X];
                 categoriaMaisLucrativa = categorias[X];
@@ -53,6 +71,7 @@ public class MelhorCategoria {
         System.out.println(categoriaMaisLucrativa);
         System.out.println("Lucro Gerado: " + lucroMais + " € ");
     }
+
 }
 
 

@@ -3,14 +3,15 @@ package Admin;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Cliente.ProcurarEstacionamento.estacionamento;
 import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 
 public class Relatorio {
 
-    // 1. Consulta de Ficheiros: Imprima o conteúdo do ficheiro na consola (deve permitir ver o conteúdo do ficheiro
-    // de Vendas, Clientes e Categorias consoante a escolha).
-
+    /**
+     * Método: Gera o menu de relátorio, onde pode acessar relatorio geral de vendas, clientes e categorias
+     * @return 1-menu vendas, 2-menu relatorios...
+     * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
+     */
     public static void relatorio() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 

@@ -5,9 +5,15 @@ import java.util.Scanner;
 
 import static Cliente.JogoMaisRecente.jogoMaisRecente;
 import static Cliente.ProcurarEstacionamento.estacionamento;
-import  static Cliente.Catalago.catalago;
+import static Cliente.Catalago.MenuCatalago.catalago;
 
 public class ClienteMenu {
+
+    /**
+     * Método: Gera o menu principal do cliente, dando acesso a opções de consulta.
+     * @return 1-Catalago de jogos, 2-Jogo mais recente, 3-vagas de estacionamento, 4 voltar
+     * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
+     */
     public static void clienteMenu() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
@@ -23,15 +29,15 @@ public class ClienteMenu {
 
             switch (opcao) {
                 case 1:
-                    //função para acessar catalagos;
+                    //função para acessar catalagos de acordo com as opções;
                     catalago();
                     break;
                 case 2:
-                    //função para imprimir arquivo;
-                    jogoMaisRecente("Ficheiros/GameStart_Vendas.csv");
+                    //função para imprimir arquivo de vendas;
+                    jogoMaisRecente();
+                    caminhosArquivos();
                     break;
                 case 3:
-                    System.out.println("\n      As vagas disponiveis no estacionamento nesse momento: \n");
                     //função para impimir as vagas disponiveis de estacionamento
                     estacionamento();
                     break;

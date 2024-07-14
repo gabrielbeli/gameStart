@@ -7,11 +7,19 @@ import static BaseFuncoes.GerarMatriz.gerarMatriz;
 
 public class PesquisaCliente {
 
+    /**
+     * Método: Usado para pesquisar um cliente através do id de identificação dele
+     * @return imprime em tela o melhor cliente e suas informações
+     * @param caminho arquivo com os dados dos clientes
+     * @param idCliente input do usuario captado na função auxiliar
+     * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
+     */
     public static void pesquisaCliente(String caminho, int idCliente) throws FileNotFoundException {
         String[][] matriz = gerarMatriz(caminho);
 
         boolean encontrouCliente = false;
 
+        //Aqui eu percorro da lista e se encontrado o id imprimo em tela as informações
         for (int X = 1; X < matriz.length; X++) {
             int id = Integer.parseInt(matriz[X][0]);
             String nome = matriz[X][1];
@@ -32,6 +40,10 @@ public class PesquisaCliente {
         }
     }
 
+    /**
+     * Método: Função para receber o id do cliente através do input
+     * @return idCliente, numero inserido pelo utilizador
+     */
     public static int obterIdCliente() {
         Scanner scanner = new Scanner(System.in);
 
