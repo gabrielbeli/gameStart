@@ -10,6 +10,7 @@ import static Admin.PesquisaCliente.obterIdCliente;
 import static Admin.PesquisaCliente.pesquisaCliente;
 import static Admin.Relatorio.relatorio;
 import static Admin.Vendas.MenuVendas.vendasMenu;
+import static BaseFuncoes.DisparoArquivos.caminhosDosArquivos;
 
 public class AdminMenu {
 
@@ -44,19 +45,19 @@ public class AdminMenu {
                     break;
                 case 3:
                     // função para encontrar cliente
-                    pesquisaCliente("Ficheiros/GameStart_Clientes.csv",obterIdCliente());
+                    pesquisaCliente(caminhosDosArquivos(4),obterIdCliente());
                     break;
                 case 4:
                     // função para melhor(es) cliente(s)
-                    melhorCliente("Ficheiros/GameStart_Clientes.csv", "Ficheiros/GameStart_Vendas.csv");
+                    melhorCliente(caminhosDosArquivos(4), caminhosDosArquivos(1));
                     break;
                 case 5:
                     // função para melhor categoria
-                    categoriaMaisLucrativa("Ficheiros/GameStart_Vendas.csv", "Ficheiros/GameStart_Categorias.csv");
+                    categoriaMaisLucrativa(caminhosDosArquivos(1), caminhosDosArquivos(3));
                     break;
                 case 6:
                     // função para consultar jogo mais caro
-                    jogoMaisCaro("Ficheiros/GameStart_Vendas.csv","Ficheiros/GameStart_Clientes.csv");
+                    jogoMaisCaro(caminhosDosArquivos(1),caminhosDosArquivos(4));
                     break;
                 case 7:
                     return;

@@ -3,6 +3,7 @@ package Cliente.Catalago;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.DisparoArquivos.caminhosDosArquivos;
 import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 import static Cliente.Catalago.Grafico.arquivoCatalogo;
 import static Cliente.Catalago.TodosJogos.todoJogos;
@@ -35,15 +36,15 @@ public class MenuCatalago {
             switch (opcao) {
                 case 1:
                     //função para imprimir todos os jogos
-                    todoJogos("Ficheiros/GameStart_Vendas.csv");
+                    todoJogos(caminhosDosArquivos(1));
                     break;
                 case 2:
                     //função para imprimir jogos categoria
-                    catalogoCategoria("Ficheiros/GameStart_Vendas.csv", obterNomeCategoria());
+                    catalogoCategoria(caminhosDosArquivos(1), obterNomeCategoria());
                     break;
                 case 3:
                     //função para impimir jogos por editora
-                    catalogoEditora("Ficheiros/GameStart_Vendas.csv", obterNomeEditora());
+                    catalogoEditora(caminhosDosArquivos(1), obterNomeEditora());
                     break;
                 case 4:
                     //função para imprimir catalago gráfico

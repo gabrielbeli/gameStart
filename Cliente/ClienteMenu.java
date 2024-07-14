@@ -3,6 +3,7 @@ package Cliente;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.DisparoArquivos.caminhosDosArquivos;
 import static Cliente.JogoMaisRecente.jogoMaisRecente;
 import static Cliente.ProcurarEstacionamento.estacionamento;
 import static Cliente.Catalago.MenuCatalago.catalago;
@@ -34,8 +35,7 @@ public class ClienteMenu {
                     break;
                 case 2:
                     //função para imprimir arquivo de vendas;
-                    jogoMaisRecente();
-                    caminhosArquivos();
+                    jogoMaisRecente(caminhosDosArquivos(1));
                     break;
                 case 3:
                     //função para impimir as vagas disponiveis de estacionamento

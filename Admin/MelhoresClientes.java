@@ -23,7 +23,7 @@ public class MelhoresClientes {
         double maiorValorCompras = 0.0;
 
         //percorrendo para encontrar o id do cliente e usando da função auxiliar para determinar o valor total das compras
-        for (int X = 0; X < matrizClientes.length; X++) {
+        for (int X = 1; X < matrizClientes.length; X++) {
 
             int idCliente = Integer.parseInt(matrizClientes[X][0]);
             double totalCompras = calcularTotalComprasCliente(idCliente, matrizVendas);
@@ -40,7 +40,7 @@ public class MelhoresClientes {
         System.out.println("Jogos comprados:");
 
         //aqui imprimindo todos os jogos comprados pelo cliente
-        for (int X = 0; X < matrizVendas.length; X++) {
+        for (int X = 1; X < matrizVendas.length; X++) {
 
             int idCliente = Integer.parseInt(matrizVendas[X][1]);
 
@@ -60,7 +60,7 @@ public class MelhoresClientes {
 
         double totalCompras = 0.0;
 
-        for (int X = 0; X < matrizVendas.length; X++) {
+        for (int X = 1; X < matrizVendas.length; X++) {
 
             int id = Integer.parseInt(matrizVendas[X][1]);
 

@@ -3,6 +3,7 @@ package Admin;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static BaseFuncoes.DisparoArquivos.caminhosDosArquivos;
 import static BaseFuncoes.ImprimirArquivo.imprimirAquivo;
 
 public class Relatorio {
@@ -22,21 +23,21 @@ public class Relatorio {
             System.out.println("                               2.Clientes");
             System.out.println("                               3.Categorias");
             System.out.println("                               4.Voltar\n");
-            System.out.print("     \uD83D\uDD79\uFE0FOpção:");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção:");
             int opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1:
                     //função para acessar catalagos;
-                    imprimirAquivo("Ficheiros/GameStart_Vendas.csv");
+                    imprimirAquivo(caminhosDosArquivos(1));
                     break;
                 case 2:
                     //função para imprimir arquivo
-                    imprimirAquivo("Ficheiros/GameStart_Clientes.csv");
+                    imprimirAquivo(caminhosDosArquivos(4));
                     break;
                 case 3:
                     //função para impimir as vagas disponiveis de estacionamento
-                    imprimirAquivo("Ficheiros/GameStart_Categorias.csv");
+                    imprimirAquivo(caminhosDosArquivos(3));
                     break;
                 case 4:
                     return;

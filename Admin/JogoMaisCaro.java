@@ -20,7 +20,7 @@ public class JogoMaisCaro {
         String nomeJogoMaisCaro = "";
 
         //percorro a lista de vendas e comparo os valores
-        for (int X = 0; X < matrizVendas.length; X++) {
+        for (int X = 1; X < matrizVendas.length; X++) {
 
             double preco = Double.parseDouble(matrizVendas[X][5]);
 

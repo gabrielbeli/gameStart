@@ -22,7 +22,7 @@ public class Top5Jogos {
         int totalJogos = 0;
 
         //aqui estou percorrendo as matrizes, encontrando os jogos, valores, lucros e fazendo os calculos
-        for (int X = 0; X < matrizVendas.length; X++) {
+        for (int X = 1; X < matrizVendas.length; X++) {
             String nomeJogo = matrizVendas[X][4];
             double valorVenda = Double.parseDouble(matrizVendas[X][5]);
             String categoriaJogo = matrizVendas[X][3];
