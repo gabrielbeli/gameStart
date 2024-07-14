@@ -19,13 +19,13 @@ public class TodosJogos {
 
         System.out.println("\n     \uD83C\uDFAE Nossos Jogos:\n ");
 
-        for (int i = 0; i < matriz.length; i++) {
+        for (int X = 1; X < matriz.length; X++) {
 
-            String jogo = matriz[i][4];
+            String jogo = matriz[X][4];
 
             if (!jogos.contains("," + jogo + ",")) {
                 jogos += jogo + ",";
-                System.out.println("     "+jogo);
+                System.out.println("     \uD83D\uDC7E "+jogo);
             }
         }
     }

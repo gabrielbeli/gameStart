@@ -33,7 +33,7 @@ public class Grafico {
                 case 4:
                     return "Ficheiros/CatalogoGrafico/minecraft.txt";
                 case 5:
-                    return "Ficheiros/CatalogoGrafico/montalKombat.txt";
+                    return "Ficheiros/CatalogoGrafico/mortalKombat.txt";
                 case 6:
                     return "Ficheiros/CatalogoGrafico/overcooked.txt";
                 default:

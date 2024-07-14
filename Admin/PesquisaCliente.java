@@ -27,11 +27,10 @@ public class PesquisaCliente {
             String email = matriz[X][3];
 
             if (id == idCliente) {
-                System.out.println("\nNome: " + nome);
-                System.out.println("Telemóvel: " + telemovel);
-                System.out.println("Email: " + email + "\n");
+                System.out.println("\n     \uD83E\uDEAA Nome: " + nome);
+                System.out.println("     ☎\uFE0F Telemóvel: " + telemovel);
+                System.out.println("     \uD83D\uDCE7 Email: " + email + "\n");
                 encontrouCliente = true;
-                break;
             }
         }
 
@@ -47,7 +46,7 @@ public class PesquisaCliente {
     public static int obterIdCliente() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("\nDigite o ID do cliente: ");
+        System.out.print("\n     \uD83D\uDD0D Digite o ID do cliente: ");
         int idCliente = scanner.nextInt();
         scanner.nextLine();
 

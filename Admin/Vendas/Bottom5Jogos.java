@@ -54,12 +54,12 @@ public class Bottom5Jogos {
 
         lucroCrescente(jogosLucro, totalJogos);
 
-        System.out.println("\n Top " + numeroJogos + " Jogos que Menos Geraram Lucro \n");
+        System.out.println("\n     \uD83D\uDCC9 Top " + numeroJogos + " - lucrativos \n");
 
         //aqui eu imprimo a lista de jogos de acordo com o parametro "5"
         for (int X = 0; X < numeroJogos && X < totalJogos; X++) {
-            System.out.println("Jogo: " + jogosLucro[X][0]);
-            System.out.println("Lucro Gerado: R$" + jogosLucro[X][1]);
+            System.out.println("     \uD83C\uDFAE Jogo: " + jogosLucro[X][0]);
+            System.out.println("     \uD83D\uDCB5 Lucro Gerado: R$" + jogosLucro[X][1]);
             System.out.println();
         }
     }

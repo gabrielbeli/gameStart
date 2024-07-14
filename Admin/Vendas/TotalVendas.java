@@ -30,6 +30,6 @@ public class TotalVendas {
             total += (precoUnitario);
         }
 
-        System.out.println("Total: " + total + " €");
+        System.out.println("     \uD83D\uDCB5 Total: " + total + " €");
     }
 }

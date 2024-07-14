@@ -63,10 +63,10 @@ public class Login {
      * @return o username e o password captados para seguir para validação
      */
     private static boolean autenticadoAdmin(Scanner input) throws FileNotFoundException {
-        System.out.print("Usuário: ");
+        System.out.print("     \uD83D\uDC64Usuário: ");
         String username = input.next();
 
-        System.out.print("Senha: ");
+        System.out.print("     \uD83D\uDD12Senha: ");
         String password = input.next();
 
         return autenticado(username, password);
@@ -96,7 +96,6 @@ public class Login {
 
                 if (fileUsername.equals(username) && filePassword.equals(password)) {
                     autenticado = true;
-                    break;
                 }
             }
         }
@@ -112,22 +111,21 @@ public class Login {
 
         System.out.println("                         \uD83E\uDEAA Faça seu cadastro \uD83E\uDEAA \n");
 
-        System.out.print("     \uD83D\uDC64Usuário: ");
+        System.out.print("     \uD83D\uDC64 Usuário: ");
         input.nextLine();
         String username = input.next();
 
         input.nextLine();
-        System.out.print("     \uD83D\uDD12Senha de 6 digitos: ");
+        System.out.print("     \uD83D\uDD12 Senha: ");
         String password = input.next();
 
-        System.out.print("     \uD83D\uDCE7E-mail: ");
+        System.out.print("     \uD83D\uDCE7 E-mail: ");
         String email = input.next();
 
-        System.out.print("     ☎\uFE0FTelemóvel: ");
+        System.out.print("     ☎\uFE0F Telemóvel: ");
         int phone = input.nextInt();
 
-        System.out.println();
-        System.out.println("                      Cadastro criado com sucesso! \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB \n ");
+        System.out.println("\n                      Cadastro criado com sucesso! \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB \n ");
         System.out.println("                    "+ username + " | " + phone + " | " + email + "\n");
 
         return true;

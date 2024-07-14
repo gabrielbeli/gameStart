@@ -19,7 +19,7 @@ public class ImprimirArquivo {
 
         while (fileScanner.hasNextLine()) {
             linha = fileScanner.nextLine();
-            System.out.println(linha );
+            System.out.println("     "+linha );
         }
 
         System.out.println();

@@ -6,9 +6,16 @@ import static BaseFuncoes.GerarMatriz.gerarMatriz;
 
 public class TotalLucro {
 
-    public static void totalGeralLucro(String caminhoVendas, String caminhoPorcentagens) throws FileNotFoundException {
+    /**
+     * Método: Calcular o lucro geral das vendas
+     * @return imprime em tela o valor total de lucro
+     * @param caminhoVendas arquivo de vendas
+     * @param caminhoPercentagens arquivo das percentagens por categoria
+     * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
+     */
+    public static void totalGeralLucro(String caminhoVendas, String caminhoPercentagens) throws FileNotFoundException {
         String[][] matrizVendas = gerarMatriz(caminhoVendas);
-        String[][] matrizPorcentagens = gerarMatriz(caminhoPorcentagens);
+        String[][] matrizPorcentagens = gerarMatriz(caminhoPercentagens);
 
         double totalLucro = 0.0;
 
@@ -21,7 +28,6 @@ public class TotalLucro {
             for (int Y = 1; Y < matrizPorcentagens.length; Y++) {
                 if (matrizPorcentagens[Y][0].equalsIgnoreCase(categoriaJogo)) {
                     porcentagemMargem = Double.parseDouble(matrizPorcentagens[Y][1]);
-                    break;
                 }
             }
 
@@ -31,7 +37,6 @@ public class TotalLucro {
 
         }
 
-        System.out.println("\nTotal Geral de Lucro das Vendas\n");
-        System.out.printf(""+totalLucro);
+        System.out.println("\n     \uD83D\uDCB5 Lucro total: " + totalLucro);
     }
 }

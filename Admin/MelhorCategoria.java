@@ -67,9 +67,9 @@ public class MelhorCategoria {
             }
         }
 
-        System.out.println("\nCategoria Mais Lucrativa\n");
-        System.out.println(categoriaMaisLucrativa);
-        System.out.println("Lucro Gerado: " + lucroMais + " € ");
+        System.out.println("\n     \uD83C\uDFC6 Categoria + lucrativa\n");
+        System.out.println("     \uD83D\uDC51 "+categoriaMaisLucrativa);
+        System.out.println("     \uD83D\uDCB5 Lucro Gerado: " + lucroMais + " € ");
     }
 
 }

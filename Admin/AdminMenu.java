@@ -23,15 +23,16 @@ public class AdminMenu {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("Menu Admin:");
-            System.out.println("1.Menu Vendas");
-            System.out.println("2.Menu Relatorios");
-            System.out.println("3.Pesquisa Cliente");
-            System.out.println("4.Melhor Cliente");
-            System.out.println("5.Melhor Categoria");
-            System.out.println("6.Jogo Mais Caro");
-            System.out.println("7.Voltar");
-            System.out.print("Escolha uma opção: ");
+            System.out.println("\n     \uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E \n");
+            System.out.println("                         \uD83E\uDE99 INSERT YOUR COIN \uD83E\uDE99");
+            System.out.println("                            1.Menu Vendas");
+            System.out.println("                            2.Menu Relatorios");
+            System.out.println("                            3.Pesquisa Cliente");
+            System.out.println("                            4.Melhor Cliente");
+            System.out.println("                            5.Melhor Categoria");
+            System.out.println("                            6.Jogo Mais Caro");
+            System.out.println("                            7.Voltar\n");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção: ");
             int opcao = scanner.nextInt();
 
             switch (opcao) {

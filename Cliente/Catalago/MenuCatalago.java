@@ -30,7 +30,7 @@ public class MenuCatalago {
             System.out.println("                          3.Jogos por editora");
             System.out.println("                          4.Catalago gráfico");
             System.out.println("                          5.Voltar\n");
-            System.out.print("     \uD83D\uDD79\uFE0F Opção:");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção: ");
             int opcao = scanner.nextInt();
 
             switch (opcao) {

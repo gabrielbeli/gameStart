@@ -34,10 +34,10 @@ public class MelhoresClientes {
             }
         }
 
-        System.out.println("\n Melhor Cliente \n");
+        System.out.println("\n     \uD83C\uDF96\uFE0F Melhor Cliente \n");
         pesquisaCliente(caminhoClientes, idClienteComMaisGastos);
 
-        System.out.println("Jogos comprados:");
+        System.out.println("     \uD83D\uDECD\uFE0F Jogos comprados \n");
 
         //aqui imprimindo todos os jogos comprados pelo cliente
         for (int X = 1; X < matrizVendas.length; X++) {
@@ -45,7 +45,7 @@ public class MelhoresClientes {
             int idCliente = Integer.parseInt(matrizVendas[X][1]);
 
             if (idCliente == idClienteComMaisGastos) {
-                System.out.println("- " + matrizVendas[X][4]);
+                System.out.println("     \uD83C\uDFAE " + matrizVendas[X][4]);
             }
         }
     }

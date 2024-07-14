@@ -30,9 +30,9 @@ public class JogoMaisCaro {
             }
         }
 
-        System.out.println("Jogo mais caro: " + nomeJogoMaisCaro + " (" + maiorPreco + " €)");
-
-        System.out.println("\nClientes que compraram o jogo mais caro:");
+        System.out.println("\n     \uD83D\uDC8E Jogo mais caro: ");
+        System.out.println("\n     \uD83C\uDFAE " + nomeJogoMaisCaro + " (" + maiorPreco + " €)");
+        System.out.println("\n     \uD83D\uDC65 Clientes que compraram o jogo mais caro:");
 
         //apresento os clientes que compraram os jogos com uso da função de pesquisa cliente
         for (int X = 0; X < matrizVendas.length; X++) {

@@ -7,6 +7,7 @@ public class JogoMaisRecente {
 
     /**
      * Método: Apresenta o jogo "novo" mais recente nas entre as vendas.
+     * @param caminhoVendas arquivo de vendas da loja
      * @return imprime o jogo em tela
      */
     public static void jogoMaisRecente(String caminhoVendas) throws FileNotFoundException {
@@ -16,9 +17,9 @@ public class JogoMaisRecente {
         String jogos = ",";
         String ultimoJogo = "";
 
-        for (int i = 1; i < matriz.length; i++) {
+        for (int X = 0; X < matriz.length; X++) {
 
-            String jogo = matriz[i][4];
+            String jogo = matriz[X][4];
 
             if (!jogos.contains("," + jogo + ",")) {
                 jogos += jogo + ",";
@@ -26,6 +27,6 @@ public class JogoMaisRecente {
             }
         }
 
-        System.out.println("Último jogo não repetido: " + ultimoJogo);
+        System.out.println("\n     \uD83C\uDFAE Jogo mais recente: " + ultimoJogo + "\n");
     }
 }

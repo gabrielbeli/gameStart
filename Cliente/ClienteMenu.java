@@ -19,13 +19,13 @@ public class ClienteMenu {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("     \uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E \n");
+            System.out.println("\n     \uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E\uD83C\uDFAE✮ ⋆˚｡\uD81A\uDDB9 ⋆｡°✩\uD83D\uDC7E \n");
             System.out.println("                         \uD83E\uDE99 INSERT YOUR COIN \uD83E\uDE99");
             System.out.println("                          1.Catálago de Jogos");
             System.out.println("                          2.Jogo mais recente");
             System.out.println("                          3.Vagas estacionamento");
             System.out.println("                          4.Voltar\n");
-            System.out.print("     \uD83D\uDD79\uFE0F Opção:");
+            System.out.print("     \uD83D\uDD79\uFE0F Opção: ");
             int opcao = scanner.nextInt();
 
             switch (opcao) {

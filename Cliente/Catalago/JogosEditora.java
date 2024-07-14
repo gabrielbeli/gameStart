@@ -19,6 +19,7 @@ public class JogosEditora {
 
         boolean encontrou = false;
 
+        // Aqui percorro a matriz vendas para comparar com a pesquisa
         for (int X = 0; X < matriz.length; X++) {
             String jogoEditora = matriz[X][2];
             String categoria = matriz[X][3];
@@ -26,20 +27,21 @@ public class JogosEditora {
 
             if (jogoEditora.equalsIgnoreCase(editora)) {
                 if (!encontrou) {
-                    System.out.println("\n      \uD83C\uDFAE Jogos da: " + editora+"\n");
+                    System.out.println("\n     \uD83C\uDFB2 Jogos da: " + editora+"\n");
                     encontrou = true;
                 }
 
                 boolean jogoRepetido = false;
+
+                // Aqui encontro os jogos que pertecem a editora/categoria e vejo se são repetidos
                 for (int Y = 0; Y < X; Y++) {
                     if (matriz[Y][4].equalsIgnoreCase(jogo)) {
                         jogoRepetido = true;
-                        break;
                     }
                 }
                 if (!jogoRepetido) {
-                    System.out.println("      \uD83D\uDD25 Categoria: " + categoria);
-                    System.out.println("                 " + jogo);
+                    System.out.println("     \uD83D\uDD25 Categoria: " + categoria);
+                    System.out.println("          \uD83C\uDFAE" + jogo);
                 }
             }
         }
